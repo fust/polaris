@@ -40,7 +40,8 @@ kubectl apply -f https://raw.githubusercontent.com/reactiveops/polaris/master/de
 Polaris can also be deployed with Helm:
 
 ```
-helm upgrade --install polaris deploy/helm/polaris/ --namespace polaris
+helm repo add reactiveops-stable https://charts.reactiveops.com/stable
+helm install reactiveops-stable/polaris --name polaris --namespace polaris
 ```
 
 ### Viewing the Dashboard
@@ -85,7 +86,8 @@ kubectl apply -f https://raw.githubusercontent.com/reactiveops/polaris/master/de
 Alternatively, the webhook can be enabled with Helm by setting `webhook.enable` to true:
 
 ```
-helm upgrade --install polaris deploy/helm/polaris/ --namespace polaris --set webhook.enable=true
+helm repo add reactiveops-stable https://charts.reactiveops.com/stable
+helm install reactiveops-stable/polaris --name polaris --namespace polaris --set webhook.enable=true --set dashboard.disable=false
 ```
 
 ## Configuration
